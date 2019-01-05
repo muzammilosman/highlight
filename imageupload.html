@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/myjs.js"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    </head>
+    <body>
+    <form id="file-form">
+    <input type="text" id="album" placeholder="Enter Album Name">
+    <input type="button" value="Create" onclick="createAlbum()" href="#">
+    <p id="albumid"></p><br><br>
+    <input type="file" accept="image/*" id="file-select">
+    <input type="button" value="Upload" id="upload-button">
+    </form>
+</body> 
+    <script>
+    $(document).ready(
+    
+    function uploadImage(){
+
+    $("#upload-button").click(function(){
+
+        var fd = new FormData();
+        var files = $('#file-select')[0].files[0];
+        console.log(files)
+        fd.append('file',files);
+
+        $.ajax({
+            url: 'http://35.244.47.26/highlight/api/Albums/'+document.getElementById('albumid').value+'/uploadImage',
+            type: 'post',
+            data: fd,
+            contentType: false,
+            processData: false,
+            success: function(response){
+                if(response != 0){
+                    alert('file uploaded successfully') 
+                }else{
+                    alert('file not uploaded');
+                }
+            },
+        });
+    });
+});
+
+
+
+</script>
+</html>
