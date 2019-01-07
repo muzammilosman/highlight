@@ -18,6 +18,9 @@ function showGetResult(){
            });
            console.log(images);
            console.log(names);
+           imgprint=document.createElement('myimg');
+           imgprint.setAttribute('src',images);
+           document.getElementById("loadimage").appendChild(imgprint);
        } 
     });
 }
