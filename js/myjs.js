@@ -8,10 +8,17 @@ function showGetResult(){
        success: function(data) {
            console.log("onload");
            console.log(data);
-           console.log(data.images)
-           imgsrc=document.getElementById("appendimg");
-           imgsrc.src=data.images;
-           document.getElementsByClassName("loadimage").appendChild(imgsrc);
+           var names = [];
+           var images  = [];
+           data.array.forEach(element => {
+               console.log(element.images);
+               names.push(element.name);
+               element.images.forEach(img =>{
+                images.push(img); 
+               });
+           });
+           console.log(images);
+           console.log(names);
        } 
     });
 }
