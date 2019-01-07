@@ -6,9 +6,9 @@ function showGetResult(){
        type: 'get',
        success: function(data) {
            console.log("onload");
-           console.log(data.images[0]);
+           console.log(data.images);
            imgsrc=document.getElementById("appendimg");
-           imgsrc.src=data.images[0];
+           imgsrc.src=data.images;
            document.getElementsByClassName("loadimage").appendChild(imgsrc);
        } 
     });
