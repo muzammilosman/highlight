@@ -18,8 +18,9 @@ function showGetResult(){
            });
            console.log(images);
            console.log(names);
+           console.log(images[0]);
            imgprint=document.createElement('img');
-           imgprint.setAttribute('src','../img/image-api/'+images[0]);
+           imgprint.setAttribute('src','../highlight/img/image-api/'+images[0]);
            document.getElementById("loadimage").appendChild(imgprint);
        } 
     });
