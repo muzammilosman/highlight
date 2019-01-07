@@ -6,10 +6,10 @@ function showGetResult(){
        type: 'get',
        success: function(data) {
            console.log("onload");
-           console.log(data);
+           console.log(data.images[0]);
            imgsrc=document.getElementById("appendimg");
-           imgsrc.src=data;
-           document.getElementsByClassName("loadimage").append(imgsrc);
+           imgsrc.src=data.images[0];
+           document.getElementsByClassName("loadimage").appendChild(imgsrc);
        } 
     });
 }
