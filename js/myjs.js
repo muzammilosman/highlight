@@ -4,13 +4,12 @@ function showGetResult(){
     $.ajax({
        url: "http://35.244.47.26/highlight/api/Albums",
        type: 'get',
-       dataType:'json',
        success: function(data) {
            console.log("onload");
            console.log(data);
            var names = [];
            var images  = [];
-           data.array.forEach(element => {
+           data.forEach(element => {
                console.log(element.images);
                names.push(element.name);
                element.images.forEach(img =>{
