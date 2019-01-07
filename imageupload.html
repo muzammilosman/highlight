@@ -13,7 +13,11 @@
     <p id="albumid"></p><br><br>
     <input type="file" accept="image/*" id="file-select">
     <input type="button" value="Upload" id="upload-button">
-    </form>
+    </form><br><br>
+    <button onclick="showGetResult()">Load Image</button>
+    <div class="loadimage">
+    <img id="appendimg">
+    </div>
 </body> 
     <script>
     $(document).ready(
@@ -43,8 +47,5 @@
         });
     });
 });
-
-
-
 </script>
 </html>

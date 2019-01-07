@@ -1,8 +1,21 @@
 
+function showGetResult(){
+    console.log("show result function")
+    $.ajax({
+       url: "http://35.244.47.26/highlight/api/Albums",
+       type: 'get',
+       success: function(data) {
+           console.log("onload");
+           console.log(data);
+           imgsrc=document.getElementById("appendimg");
+           imgsrc.src=data;
+           document.getElementsByClassName("loadimage").append(imgsrc);
+       } 
+    });
+}
 
 
-
-var myfunc=function(obj){
+var myfunc=function(imgsource){
     var gallery=document.getElementById("myclass");
     var upimage=document.createElement("img");
     var imgcont=document.createElement("div");
@@ -42,30 +55,6 @@ function createAlbum(){
 }
 
 
-
-function uploadImage(){
-    var files = document.getElementById('file-select');
-    var uploadButton = document.getElementById('upload-button');
-    files=fileSelect.files;
-    var imgData=new FormData();
-    for(i=0; i<files.length;i++){
-        var file=files[i];
-        imgData.append(file,"images");
-    }
-    var xhr= new XMLHttpRequest();
-    var url1="http://35.244.47.26/highlight/api/Albums/"+albumid+"/uploadImage"   //bad gateway
-    xhr.open('POST',url1,true);
-    xhr.setRequestHeader("Content-type","application/json");
-    xhr.withCredentials = "true";
-    if(xhr.status==200){
-        uploadButton.innerHTML="Uploading..";
-    }
-    else{
-        console.log("error occurred");
-    }
-    var data = JSON.stringify({"images":imgData})
-    xhr.send(data);
-}
 
 
 
