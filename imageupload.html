@@ -11,12 +11,11 @@
     <input type="text" id="album" placeholder="Enter Album Name">
     <input type="button" value="Create" onclick="createAlbum()" href="#">
     <p id="albumid"></p><br><br>
-    <input type="file" accept="image/*" id="file-select">
+    <input type="file" accept="image/*" id="file-select" multiple>
     <input type="button" value="Upload" id="upload-button">
     </form><br><br>
     <button onclick="showGetResult()">Load Image</button>
-    <div class="loadimage">
-    <img id="appendimg">
+    <div id="loadimage">
     </div>
 </body> 
     <script>
@@ -27,12 +26,15 @@
     $("#upload-button").click(function(){
 
         var fd = new FormData();
-        var files = $('#file-select')[0].files[0];
-        console.log(files)
+        var ins = document.getElementById('file-select').files.length;
+        for(var i=0; i<ins; i++){
+        var files = $('#file-select')[0].files[i];
+        console.log(files);
         fd.append('file',files);
-
+        }
         $.ajax({
-            url: 'http://35.244.47.26/highlight/api/Albums/'+document.getElementById('albumid').value+'/uploadImage',
+            /*url: 'http://35.244.47.26/highlight/api/Albums/'+document.getElementById('albumid').value+'/uploadImage',*/
+            url: 'http://35.244.47.26/highlight/api/Albums/5c33247c5fd001113c5439dc/uploadImage',
             type: 'post',
             data: fd,
             contentType: false,

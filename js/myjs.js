@@ -18,8 +18,8 @@ function showGetResult(){
            });
            console.log(images);
            console.log(names);
-           imgprint=document.createElement('myimg');
-           imgprint.setAttribute('src',images);
+           imgprint=document.createElement('img');
+           imgprint.setAttribute('src','../img/image-api/'+images[0]);
            document.getElementById("loadimage").appendChild(imgprint);
        } 
     });
