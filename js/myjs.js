@@ -4,9 +4,11 @@ function showGetResult(){
     $.ajax({
        url: "http://35.244.47.26/highlight/api/Albums",
        type: 'get',
+       dataType:'json',
        success: function(data) {
            console.log("onload");
-           console.log(data.images);
+           console.log(data);
+           console.log(data.images)
            imgsrc=document.getElementById("appendimg");
            imgsrc.src=data.images;
            document.getElementsByClassName("loadimage").appendChild(imgsrc);
