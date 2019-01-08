@@ -1,16 +1,18 @@
+var count=0;
 
-function showGetResult(){
+function showGetResult(p){
     console.log("show result function")
+    var names = [];
+    var images  = [];
+    document.getElementById("myclass2").innerHTML="";
     $.ajax({
        url: "http://35.244.47.26/highlight/api/Albums",
        type: 'get',
        success: function(data) {
            console.log("onload");
            console.log(data);
-           var names = [];
-           var images  = [];
+           
            data.forEach(element => {
-               console.log(element.images);
                names.push(element.name);
                element.images.forEach(img =>{
                 images.push(img); 
@@ -19,11 +21,26 @@ function showGetResult(){
            console.log(images);
            console.log(names);
            console.log(images[0]);
-           imgprint=document.createElement('img');
-           imgprint.setAttribute('src','../highlight/img/image-api/'+images[0]);
-           document.getElementById("loadimage").appendChild(imgprint);
-       } 
+           for(var i=0;i<3;i++){
+                console.log("in for loop");
+                var imgprint=document.createElement('img');
+                imgprint.src = '../img/image-api/'+images[i];
+                /*document.getElementById("loadimage").appendChild(imgprint);*/
+                /* new append */
+                var gallery=document.getElementById("myclass2");
+                var containclass=document.createElement("div");
+                containclass.setAttribute("class","col-lg-3 col-md-4 col-sm-6");
+                var imgcont=document.createElement("div");
+                imgcont.setAttribute("class","h_gallery_item");
+                imgcont.append(imgprint);
+                containclass.append(imgcont);
+                gallery.append(containclass);
+                
+           }
+        }
     });
+     count=count+p;      
+    
 }
 
 
@@ -35,7 +52,7 @@ var myfunc=function(imgsource){
     var containclass=document.createElement("div");
     containclass.setAttribute("class","col-lg-3 col-md-4 col-sm-6 ap");
     var upimage=new Image();
-    upimage.src=imgsource;
+    upimage=imgsource;
     imgcont.appendChild(upimage);
     containclass.appendChild(imgcont);
     gallery.appendChild(containclass);
