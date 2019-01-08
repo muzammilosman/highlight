@@ -550,6 +550,7 @@ button:focus {
 
 .gallery_f_inner {
   margin-bottom: -30px;
+  height:auto;
 }
 
 .h_gallery_item {
