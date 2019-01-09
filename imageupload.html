@@ -7,15 +7,19 @@
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     </head>
     <body>
+    <div class="mycolumn">
     <form id="file-form">
     <input type="text" id="album" placeholder="Enter Album Name">
     <input type="button" value="Create" onclick="createAlbum()" href="#">
+    <input type="text" id="existingalbum" placeholder="Enter Existing Album Name">
+    <input type="button" value="Check" onclick="existingAlbum()" href="#">
     <p id="albumid"></p><br><br>
     <input type="file" accept="image/*" id="file-select" multiple>
     <input type="button" value="Upload" id="upload-button">
     </form><br><br>
     <button id="ldmre">Load Image</button>
     <div id="loadimage">
+    </div>
     </div>
 </body> 
     <script>
@@ -33,8 +37,7 @@
         fd.append('file',files);
         }
         $.ajax({
-            /*url: 'http://35.244.47.26/highlight/api/Albums/'+document.getElementById('albumid').value+'/uploadImage',*/
-            url: 'http://35.244.47.26/highlight/api/Albums/5c33247c5fd001113c5439dc/uploadImage',
+            url: 'http://35.244.47.26/highlight/api/Albums/'+document.getElementById('albumid').value+'/uploadImage',
             type: 'post',
             data: fd,
             contentType: false,

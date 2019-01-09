@@ -75,12 +75,37 @@ function createAlbum(){
         albumid=json.album.id;
         console.log(albumid);
         document.getElementById('albumid').value= albumid;
+        
         }
     }
-    console.log("end")
+    console.log("end");
     var albumname = document.getElementById("album").value;
     var data=JSON.stringify({"name":albumname});   //was "album" previously
     xhr.send(data);
+}
+
+function existingAlbum(){
+    console.log("existingalbum");
+    $.ajax({
+        url:"http://35.244.47.26/highlight/api/Albums",
+        type:'get',
+        success: function(data){
+            var found1=false;
+            data.forEach(element=>{
+                if(element.name==document.getElementById("existingalbum").value){
+                    found1=true;
+                    foundid=element.id;
+                    console.log("match found")
+                }
+            });
+            if(found1!=true){
+                alert("Album not found. Create new Album");
+            }
+            else{
+                document.getElementById("albumid").value=foundid;
+            }
+        }    
+    });
 }
 
 
