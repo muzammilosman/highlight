@@ -19,6 +19,10 @@
 		<link rel="stylesheet" href="css/responsive.css">
 		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 		<script src="js/myjs.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		  
 		
     </head>
     <body>
@@ -67,7 +71,7 @@
         <section class="home_gallery_area p_120">
         	<div class="container">
         		<div class="isotope_fillter">
-        			<ul class="gallery_filter list">
+        			<ul class="gallery_filter list" id="albumfilter">
 						<li class="active" data-filter="*"><a href="#">All</a></li>
 						<li data-filter=".ap"><a href="#">Wedding</a></li>
 						<li data-filter=".unp"><a href="#">Couple</a></li>
@@ -75,103 +79,15 @@
 					</ul>
         		</div>
         	</div>
-        	<div class="container box_1620">
-        		<div class="gallery_f_inner row imageGallery1" id="myclass">
-        			<div class="col-lg-3 col-md-4 col-sm-6 ap">
-        				<div class="h_gallery_item">
-        					<img src="img/gallery/gallery-1.jpg" alt="">
-        					<div class="hover">
-        						<a class="light" href="img/gallery/gallery-1.jpg"><i class="fa fa-expand"></i></a>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-3 col-md-4 col-sm-6 unv">
-        				<div class="h_gallery_item">
-        					<img src="img/gallery/gallery-2.jpg" alt="">
-        					<div class="hover">
-        						<a class="light" href="img/gallery/gallery-2.jpg"><i class="fa fa-expand"></i></a>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-3 col-md-4 col-sm-6 unp ap">
-        				<div class="h_gallery_item">
-        					<img src="img/gallery/gallery-3.jpg" alt="">
-        					<div class="hover">
-        						<a class="light" href="img/gallery/gallery-3.jpg"><i class="fa fa-expand"></i></a>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-3 col-md-4 col-sm-6 unp">
-        				<div class="h_gallery_item">
-        					<img src="img/gallery/gallery-4.jpg" alt="">
-        					<div class="hover">
-        						<a class="light" href="img/gallery/gallery-4.jpg"><i class="fa fa-expand"></i></a>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-3 col-md-4 col-sm-6 unv">
-        				<div class="h_gallery_item">
-        					<img src="img/gallery/gallery-5.jpg" alt="">
-        					<div class="hover">
-        						<a class="light" href="img/gallery/gallery-5.jpg"><i class="fa fa-expand"></i></a>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-3 col-md-4 col-sm-6 ap">
-        				<div class="h_gallery_item">
-        					<img src="img/gallery/gallery-6.jpg" alt="">
-        					<div class="hover">
-        						<a class="light" href="img/gallery/gallery-6.jpg"><i class="fa fa-expand"></i></a>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-3 col-md-4 col-sm-6 unp">
-        				<div class="h_gallery_item">
-        					<img src="img/gallery/gallery-7.jpg" alt="">
-        					<div class="hover">
-        						<a class="light" href="img/gallery/gallery-7.jpg"><i class="fa fa-expand"></i></a>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-3 col-md-4 col-sm-6 unp">
-        				<div class="h_gallery_item">
-        					<img src="img/gallery/gallery-8.jpg" alt="">
-        					<div class="hover">
-        						<a class="light" href="img/gallery/gallery-8.jpg"><i class="fa fa-expand"></i></a>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-3 col-md-4 col-sm-6 unv">
-        				<div class="h_gallery_item">
-        					<img src="img/gallery/gallery-9.jpg" alt="">
-        					<div class="hover">
-        						<a class="light" href="img/gallery/gallery-9.jpg"><i class="fa fa-expand"></i></a>
-        					</div>
-        				</div>
-					</div>
-        			<div class="col-lg-3 col-md-4 col-sm-6 unp hidden">
-        				<div class="h_gallery_item">
-        					<img src="img/gallery/gallery-10.jpg" alt="">
-        					<div class="hover">
-        						<a class="light" href="img/gallery/gallery-10.jpg"><i class="fa fa-expand"></i></a>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-3 col-md-4 col-sm-6 ap hidden">
-        				<div class="h_gallery_item">
-        					<img src="img/gallery/gallery-11.jpg" alt="">
-        					<div class="hover">
-        						<a class="light" href="img/gallery/gallery-11.jpg"><i class="fa fa-expand"></i></a>
-        					</div>
-        				</div>
-					</div>
-					<script type="text/javascript">myfunc()</script>
+        	<div class="container box_1620" id="nestedclass">
+        		<div class="gallery_f_inner row imageGallery1" id="myclass2">`
+        	
         			
+					
         		</div>
         		<div class="button_more">
-					<button id="show">Load more</button>
-					<button id="hide">Hide</button>
-        		</div>
+					<button id="loadMore" href="">Load More</button>
+				</div>
         	</div>
         </section>
         <!--================End Home Gallery Area =================-->
@@ -319,5 +235,91 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <script src="js/mail-script.js"></script>
 		<script src="js/theme.js"></script>
 		<script src="js/myjs.js"></script>
-    </body>
+	</body>
+
+	<script>
+
+
+
+var globaldata;
+var current = {
+	album: 0,
+	images: 0
+}
+const noI = 2;
+
+$(document).ready(
+	function getresultffs(){
+		$.ajax({
+			url: "http://35.244.47.26/highlight/api/Albums",
+			type: 'get',
+			success: function(data) {
+				console.log("onload");
+				console.log(data);
+				globaldata=data;
+				loadmore();
+				filterappend();
+				}
+		});
+});
+
+	function loadmore(){
+		var count = 0
+		console.log("loadmore called")
+		for(i=current.album;i<globaldata.length;i++){
+			console.log(current.images, globaldata[i].images.length)
+			for (n = current.images;n<globaldata[i].images.length;n++) {
+				if (count == noI) {
+					console.log("if statement")
+					return
+				}
+				console.log("Inside nested for loop");
+				var albumName = globaldata[i].name
+				var albumImage  = globaldata[i].images[n]
+				console.log("appending");
+                		var imgprint=document.createElement('img');
+						imgprint.src = '../img/image-api/'+albumImage;
+						/*document.getElementById("loadimage").appendChild(imgprint);*/
+						/* new append */
+						var gallery=document.getElementById("myclass2");
+						var containclass=document.createElement("div");
+						containclass.setAttribute("class","col-lg-3 col-md-4 col-sm-6 "+ albumName);
+						containclass.setAttribute('class',albumName);
+						var imgcont=document.createElement("div");
+						imgcont.setAttribute("class","h_gallery_item");
+						imgcont.append(imgprint);
+						containclass.append(imgcont);
+						$("#myclass2").append('<div class="col-lg-3 col-md-4 col-sm-6 '+albumName+'">'+
+										'<div class="h_gallery_item"><img src="'+imgprint.src+'" alt="">'+
+										'<div class="hover"><a class="light" href="'+imgprint.src+'">'+
+											'<i class="fa fa-expand"></i></a></div></div>');
+						gallery.style.height= "auto";
+				count++	
+				current.images++			
+			}
+			current.album++
+			current.images = 0
+		}
+
+	}
+
+
+
+$(document).on('click','#loadMore',function(e){
+	e.preventDefault();
+	loadmore();
+});
+
+
+
+
+	function filterappend(){
+		console.log("inside filterappend")
+		for(var i=0;i<globaldata.length;i++){
+			$("#albumfilter").append('<li data-filter=".'+globaldata[i].name+'"><a href="#">'+globaldata[i].name+'</a></li>');
+		}
+	}
+
+	
+	</script>
 </html>

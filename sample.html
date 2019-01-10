@@ -1,8 +1,198 @@
-<div class="col-lg-3 col-md-4 col-sm-6 unv">
-    <div class="h_gallery_item">
-        <img src="img/gallery/gallery-12.jpg" alt="">
-        <div class="hover">
-            <a class="light" href="img/gallery/gallery-12.jpg"><i class="fa fa-expand"></i></a>
+<!DOCTYPE html>
+<html>
+<body>
+<div> <img src=""> </div>
+<div> <img src=""> </div>
+<div> <img src=""> </div>
+<div> <img src=""> </div>
+<div> <img src=""> </div>
+<div> <img src=""> </div>
+<div> <img src=""> </div>
+<div> <img src=""> </div>
+<div> <img src=""> </div>
+
+<a href="#" id="loadMore">Load More</a>
+</body>
+
+
+<script>
+
+var images={
+  img1:"http://i.imgur.com/CmU3tnl.jpg",
+  img2:"http://i.imgur.com/TDdxS9H.png",
+  img3:"http://i.imgur.com/39rpmwB.jpg",
+  img4:"http://i.imgur.com/1lBZQ1B.png",
+  img5:"https://i.imgur.com/Y5Ld4Qfh.jpg",
+  img6:"http://i.imgur.com/8HumESY.jpg",
+  img7:"http://i.imgur.com/CqCZBvk.png",
+  img8:"http://i.imgur.com/wQVPRVp.png"
+};
+
+
+$(function () {
+    $("div").slice(0, 1).show();
+    $("#loadMore").on('click', function (e) {
+          
+      e.preventDefault();
+         
+      
+         $("div:hidden").slice(0, 1).slideDown(function(){
+           var imgLoadedElem=$("img[src!='']");
+          console.log(imgLoadedElem.length);
+          console.log(Object.keys(images).length);
+          var a=Object.keys(images).length;
+          if(imgLoadedElem.length==0){
+          $(this).children('img') .attr('src', "http://i.imgur.com/CmU3tnl.jpg");
+            
+          }      
+          else
+          {
+            $(this).children('img').attr('src',Object.values(images)[imgLoadedElem.length]);
+            
+          }
+          if((a-imgLoadedElem.length)==2){
+            $(this).children('img').attr('src',Object.values(images)[6]);
+          }
+          if((a-imgLoadedElem.length)==1){
+            $(this).children('img').attr('src',Object.values(images)[8]);
+          }   
+         }); 
+              
+         
+              
+        if ($("div:hidden").length == 0) {
+            $("#load").fadeOut('slow');
+        }
+        $('html,body').animate({
+            scrollTop: $(this).offset().top
+        }, 1500);
+    });
+});
+
+</script>
+</html>
+
+<div class="col-lg-3 col-md-4 col-sm-6 ap">
+        <div class="h_gallery_item">
+            <img src="img/gallery/gallery-1.jpg" alt="">
+            <div class="hover">
+                <a class="light" href="img/gallery/gallery-1.jpg"><i class="fa fa-expand"></i></a>
+            </div>
         </div>
     </div>
-</div>
+    <div class="col-lg-3 col-md-4 col-sm-6 unv">
+        <div class="h_gallery_item">
+            <img src="img/gallery/gallery-2.jpg" alt="">
+            <div class="hover">
+                <a class="light" href="img/gallery/gallery-2.jpg"><i class="fa fa-expand"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 unp ap">
+        <div class="h_gallery_item">
+            <img src="img/gallery/gallery-3.jpg" alt="">
+            <div class="hover">
+                <a class="light" href="img/gallery/gallery-3.jpg"><i class="fa fa-expand"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 unp">
+        <div class="h_gallery_item">
+            <img src="img/gallery/gallery-4.jpg" alt="">
+            <div class="hover">
+                <a class="light" href="img/gallery/gallery-4.jpg"><i class="fa fa-expand"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 unv">
+        <div class="h_gallery_item">
+            <img src="img/gallery/gallery-5.jpg" alt="">
+            <div class="hover">
+                <a class="light" href="img/gallery/gallery-5.jpg"><i class="fa fa-expand"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 ap">
+        <div class="h_gallery_item">
+            <img src="img/gallery/gallery-6.jpg" alt="">
+            <div class="hover">
+                <a class="light" href="img/gallery/gallery-6.jpg"><i class="fa fa-expand"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 unp">
+        <div class="h_gallery_item">
+            <img src="img/gallery/gallery-7.jpg" alt="">
+            <div class="hover">
+                <a class="light" href="img/gallery/gallery-7.jpg"><i class="fa fa-expand"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 unp">
+        <div class="h_gallery_item">
+            <img src="img/gallery/gallery-8.jpg" alt="">
+            <div class="hover">
+                <a class="light" href="img/gallery/gallery-8.jpg"><i class="fa fa-expand"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 unv">
+        <div class="h_gallery_item">
+            <img src="img/gallery/gallery-9.jpg" alt="">
+            <div class="hover">
+                <a class="light" href="img/gallery/gallery-9.jpg"><i class="fa fa-expand"></i></a>
+            </div>
+        </div>
+    </div>
+    <script>
+    
+ $(document).ready(
+
+function GetResult(){
+$(document).on('click','#loadMore',function(e){
+    e.preventDefault();	
+    console.log("show result function")
+    var album = [];
+    var images  = [];
+    $.ajax({
+        url: "http://35.244.47.26/highlight/api/Albums",
+        type: 'get',
+        success: function(data) {
+            console.log("onload");
+            console.log(data);
+       
+            data.forEach(element => {
+                album.push(element.name);
+                albumclass=element.name;
+                element.images.forEach(img =>{
+                    images.push(img); 
+                    console.log("in for loop");
+                    var imgprint=document.createElement('img');
+                    imgprint.src = '../img/image-api/'+img;
+                    /*document.getElementById("loadimage").appendChild(imgprint);*/
+                    /* new append */
+                    var gallery=document.getElementById("myclass2");
+                    var containclass=document.createElement("div");
+                    containclass.setAttribute("class","col-lg-3 col-md-4 col-sm-6 "+albumclass);
+                    var imgcont=document.createElement("div");
+                    imgcont.setAttribute("class","h_gallery_item");
+                    imgcont.append(imgprint);
+                    containclass.append(imgcont);
+                    $("#myclass2").append('<div class="col-lg-3 col-md-4 col-sm-6">'+
+                                    '<div class="h_gallery_item"><img src="'+imgprint.src+'" alt="">'+
+                                    '<div class="hover"><a class="light" href="'+imgprint.src+'">'+
+                                        '<i class="fa fa-expand"></i></a></div></div>');
+                    gallery.style.height= "auto";
+                        });
+            });
+       console.log(images);
+       console.log(album);
+       console.log(images[0]);
+        }
+    
+    });
+       
+
+});
+});
+</script>

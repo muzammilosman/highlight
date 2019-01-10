@@ -7,15 +7,19 @@
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     </head>
     <body>
+    <div class="mycolumn">
     <form id="file-form">
     <input type="text" id="album" placeholder="Enter Album Name">
     <input type="button" value="Create" onclick="createAlbum()" href="#">
+    <input type="text" id="existingalbum" placeholder="Enter Existing Album Name">
+    <input type="button" value="Check" onclick="existingAlbum()" href="#">
     <p id="albumid"></p><br><br>
     <input type="file" accept="image/*" id="file-select" multiple>
     <input type="button" value="Upload" id="upload-button">
     </form><br><br>
-    <button onclick="showGetResult()">Load Image</button>
+    <button id="ldmre">Load Image</button>
     <div id="loadimage">
+    </div>
     </div>
 </body> 
     <script>
@@ -33,8 +37,7 @@
         fd.append('file',files);
         }
         $.ajax({
-            /*url: 'http://35.244.47.26/highlight/api/Albums/'+document.getElementById('albumid').value+'/uploadImage',*/
-            url: 'http://35.244.47.26/highlight/api/Albums/5c33247c5fd001113c5439dc/uploadImage',
+            url: 'http://35.244.47.26/highlight/api/Albums/'+document.getElementById('albumid').value+'/uploadImage',
             type: 'post',
             data: fd,
             contentType: false,
@@ -50,4 +53,56 @@
     });
 });
 </script>
+<script>
+$(document).ready(function(){
+
+
+$("#ldmre").click(function(){
+console.log("show result function")
+$.ajax({
+url: "http://35.244.47.26/highlight/api/Albums",
+type: 'get',
+success: function(data) {
+    console.log("onload");
+    console.log(data);
+    var names = [];
+    var images  = [];
+    data.forEach(element => {
+        console.log(element.images);
+        names.push(element.name);
+        element.images.forEach(img =>{
+            images.push(img); 
+        });
+    });
+    console.log(images);
+    console.log(names);
+    console.log(images[0]);
+    for(var i=0;i<images.length;i++){
+    var imgprint=document.createElement('img');
+    imgprint.setAttribute('src','../img/image-api/'+images[i]);
+    /*document.getElementById("loadimage").appendChild(imgprint);*/
+    /* new append */
+    var gallery=document.getElementById("myclass2");
+        var containclass=document.createElement("div");
+        containclass.setAttribute("class","col-lg-3 col-md-4 col-sm-6");
+        var imgcont=document.createElement("div");
+        imgcont.setAttribute("class","h_gallery_item");
+        imgcont.appendChild(imgprint);
+        var hover=document.createElement("div");
+        hover.setAttribute('class','hover');
+        var hrefimg=document.createElement("a");
+        hrefimg.setAttribute('class','light');
+        hrefimg.setAttribute('href','../img/image-api/'+images[i]);
+        itag=document.createElement('i');
+        itag.setAttribute('class','fa fa-expand');
+        hrefimg.appendChild(itag);
+        hover.appendChild(hrefimg);
+        containclass.appendChild(hover);
+        containclass.appendChild(imgcont);
+        gallery.appendChild(containclass);
+    }
+} 
+});
+});
+});</script>
 </html>
