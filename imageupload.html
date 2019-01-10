@@ -7,14 +7,16 @@
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     </head>
     <body>
-    <div class="mycolumn">
+    <div class="container" style="padding-top: 5%; padding-left:20%; "><h1>ADMIN PANEL</h1></div>
+    <div class="mycolumn" style="padding: 2%;background-color: rgb(202, 195, 195); width: 50%; margin-left: 20%;">
     <form id="file-form">
     <input type="text" id="album" placeholder="Enter Album Name">
     <input type="button" value="Create" onclick="createAlbum()" href="#">
     <input type="text" id="existingalbum" placeholder="Enter Existing Album Name">
     <input type="button" value="Check" onclick="existingAlbum()" href="#">
     <p id="albumid"></p>
-    <p>PS: Please dont include spaces when creating an album</p><br><br>
+    <p>PS: Please dont include spaces when creating an album</p><br>
+    <p id="existalbumname"></p><br>
     <input type="file" accept="image/*" id="file-select" multiple>
     <input type="button" value="Upload" id="upload-button">
     </form><br><br>

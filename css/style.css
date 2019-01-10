@@ -280,7 +280,7 @@ button:focus {
   font-size: 12px;
   line-height: 60px;
   display: inline-block;
-  color: #fff;
+  color: rgb(39, 38, 38);
   margin-left: 220px;
 }
 
@@ -3526,17 +3526,20 @@ h1, h2, h3, h4, h5, h6 {
 #myList li{ display:none;
 }
 #loadMore {
- color:green;
+ color: rgb(80, 77, 77);
  cursor:pointer;
  padding: 5px 11px;
  cursor: pointer;
- background: #e8e8e8;
- width: 75px;
+ background: white;
+ width: 100px;
  margin: 3px;
  position: relative;
  border-radius: 7px;
+ font-family: "Poppins", sans-serif;
 }
-#loadMore:hover
+#loadMore:hover{
+  background: #f8f407;
+}
 #showLessa:hover
 #showLess:hover
  {
@@ -3557,4 +3560,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .hidden{
   display: none;
+}
+
+.moreclicks{
+  font-family: "Poppins", sans-serif;
+  color: black;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-style: none;
+  background: none;
+  border:
+}
+
+.moreclicks:hover{
+  text-decoration: none;
+  background: yellow;
 }

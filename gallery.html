@@ -51,20 +51,12 @@
             </nav>
         </header>
         <!--================Header Menu Area =================-->
-        
+		<div class="container" style="height:100px; font-family:'Poppins',sans-serif; padding-top: 100px; text-align: center;">
+			<h1>OUR GALLERY</h1>
+			<p>Moments that make memories are worth capturing.</p>
+		</div>
         <!--================Home Banner Area =================-->
-        <section class="home_banner_area">
-            <div class="banner_inner d-flex align-items-center">
-            	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
-				<div class="container">
-					<div class="banner_content text-center">
-						<h2>Highlight Studio</h2>
-						<p>Every wedding we photograph is unique and has its own take on a timeless tradition, nothing can prepare you for the many emotions and beautiful moments you will experience on your wedding day.</p>
-						<a href="#" class="btn theme_btn">Explore Gallery</a>
-					</div>
-				</div>
-            </div>
-        </section>
+       
         <!--================End Home Banner Area =================-->
         
         <!--================Home Gallery Area =================-->
@@ -94,58 +86,7 @@
         
         
         <!--================Service Area =================-->
-        <section class="service_area p_120">
-        	<div class="container">
-        		<div class="main_title">
-        			<h2>What we offer</h2>
-        			<p>Who are in extremely love with eco friendly system.</p>
-        		</div>
-        		<div class="row service_inner">
-						<div class="col-lg-4 col-md-6">
-								<div class="service_item">
-									<i class="lnr lnr-camera"></i>
-									<h4>Photography</h4>
-									<p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<div class="service_item">
-									<i class="lnr lnr-picture"></i>
-									<h4>Image Maipulation</h4>
-									<p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<div class="service_item">
-									<i class="lnr lnr-camera-video"></i>
-									<h4>Videography</h4>
-									<p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<div class="service_item">
-									<i class="lnr lnr-film-play"></i>
-									<h4>Cinematography</h4>
-									<p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<div class="service_item">
-									<i class="lnr lnr-eye"></i>
-									<h4>Pro Photoshoot</h4>
-									<p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-6">
-								<div class="service_item">
-									<i class="lnr lnr-bullhorn"></i>
-									<h4>Digital Media</h4>
-									<p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
-								</div>
-        			</div>
-        		</div>
-        	</div>
-        </section>
+        
 		<!--================End Service Area =================-->
         
         <!--================Instagram Area =================-->
@@ -280,7 +221,7 @@ function getresultffs(alb){
 				var albumImage  = globaldata[i].images[n]
 				console.log("appending");
                 		var imgprint=document.createElement('img');
-						imgprint.src = '../highlight/img/image-api/'+albumImage;
+						imgprint.src = '../img/image-api/'+albumImage;
 						/*document.getElementById("loadimage").appendChild(imgprint);*/
 						/* new append */
 						var gallery=document.getElementById("myclass2");

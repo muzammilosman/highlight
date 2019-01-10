@@ -34,6 +34,7 @@ function createAlbum(){
     }
     console.log("end");
     var albumname = document.getElementById("album").value;
+    document.getElementById("existalbumname").innerHTML="Album Created:"+albumname;
     var data=JSON.stringify({"name":albumname});   //was "album" previously
     xhr.send(data);
 }
@@ -49,7 +50,8 @@ function existingAlbum(){
                 if(element.name==document.getElementById("existingalbum").value){
                     found1=true;
                     foundid=element.id;
-                    console.log("match found")
+                    alert("Album match found. Please upload the images")
+                    document.getElementById("existalbumname").innerHTML="Album name: "+element.name;
                 }
             });
             if(found1!=true){
