@@ -70,23 +70,76 @@
         <!--================Home Gallery Area =================-->
         <section class="home_gallery_area p_120">
         	<div class="container">
-        		<div class="isotope_fillter">
-        			<ul class="gallery_filter list" id="albumfilter">
-						<li class="active" data-filter="*"><a href="#">All</a></li>
-						<li data-filter=".ap"><a href="#">Wedding</a></li>
-						<li data-filter=".unp"><a href="#">Couple</a></li>
-						<li data-filter=".unv"><a href="#">Events</a></li>
-					</ul>
-        		</div>
+					<div class="main_title">
+							<h2>Our Clicks</h2>
+							<p>A glance at some of our finest takes</p>
+						</div>
         	</div>
-        	<div class="container box_1620" id="nestedclass">
-        		<div class="gallery_f_inner row imageGallery1" id="myclass2">`
-        	
-        			
+        	<div class="container box_1620" >
+        		<div class="gallery_f_inner row imageGallery1" >`
+					
+				<div class="col-lg-3 col-md-4 col-sm-6 ap">
+						<div class="h_gallery_item">
+							<img src="img/gallery/gallery-1.jpg" alt="">
+							<div class="hover">
+								<a class="light" href="img/gallery/gallery-1.jpg"><i class="fa fa-expand"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 unv">
+						<div class="h_gallery_item">
+							<img src="img/gallery/gallery-2.jpg" alt="">
+							<div class="hover">
+								<a class="light" href="img/gallery/gallery-2.jpg"><i class="fa fa-expand"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 unp ap">
+						<div class="h_gallery_item">
+							<img src="img/gallery/gallery-3.jpg" alt="">
+							<div class="hover">
+								<a class="light" href="img/gallery/gallery-3.jpg"><i class="fa fa-expand"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 unp">
+						<div class="h_gallery_item">
+							<img src="img/gallery/gallery-4.jpg" alt="">
+							<div class="hover">
+								<a class="light" href="img/gallery/gallery-4.jpg"><i class="fa fa-expand"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 unv">
+						<div class="h_gallery_item">
+							<img src="img/gallery/gallery-5.jpg" alt="">
+							<div class="hover">
+								<a class="light" href="img/gallery/gallery-5.jpg"><i class="fa fa-expand"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 ap">
+						<div class="h_gallery_item">
+							<img src="img/gallery/gallery-6.jpg" alt="">
+							<div class="hover">
+								<a class="light" href="img/gallery/gallery-6.jpg"><i class="fa fa-expand"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 unp">
+						<div class="h_gallery_item">
+							<img src="img/gallery/gallery-7.jpg" alt="">
+							<div class="hover">
+								<a class="light" href="img/gallery/gallery-7.jpg"><i class="fa fa-expand"></i></a>
+							</div>
+						</div>
+					</div>
+							
+									
 					
         		</div>
         		<div class="button_more">
-					<button id="loadMore" href="">Load More</button>
+					<a href="gallery.html" type="button">More Clicks</a>
 				</div>
         	</div>
         </section>
@@ -237,89 +290,4 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		<script src="js/myjs.js"></script>
 	</body>
 
-	<script>
-
-
-
-var globaldata;
-var current = {
-	album: 0,
-	images: 0
-}
-const noI = 2;
-
-$(document).ready(
-	function getresultffs(){
-		$.ajax({
-			url: "http://35.244.47.26/highlight/api/Albums",
-			type: 'get',
-			success: function(data) {
-				console.log("onload");
-				console.log(data);
-				globaldata=data;
-				loadmore();
-				filterappend();
-				}
-		});
-});
-
-	function loadmore(){
-		var count = 0
-		console.log("loadmore called")
-		for(i=current.album;i<globaldata.length;i++){
-			console.log(current.images, globaldata[i].images.length)
-			for (n = current.images;n<globaldata[i].images.length;n++) {
-				if (count == noI) {
-					console.log("if statement")
-					return
-				}
-				console.log("Inside nested for loop");
-				var albumName = globaldata[i].name
-				var albumImage  = globaldata[i].images[n]
-				console.log("appending");
-                		var imgprint=document.createElement('img');
-						imgprint.src = '/highlight/img/image-api/'+albumImage;
-						/*document.getElementById("loadimage").appendChild(imgprint);*/
-						/* new append */
-						var gallery=document.getElementById("myclass2");
-						var containclass=document.createElement("div");
-						containclass.setAttribute("class","col-lg-3 col-md-4 col-sm-6 "+ albumName);
-						containclass.setAttribute('class',albumName);
-						var imgcont=document.createElement("div");
-						imgcont.setAttribute("class","h_gallery_item");
-						imgcont.append(imgprint);
-						containclass.append(imgcont);
-						$("#myclass2").append('<div class="col-lg-3 col-md-4 col-sm-6 '+albumName+'">'+
-										'<div class="h_gallery_item"><img src="'+imgprint.src+'" alt="">'+
-										'<div class="hover"><a class="light" href="'+imgprint.src+'">'+
-											'<i class="fa fa-expand"></i></a></div></div>');
-						gallery.style.height= "auto";
-				count++	
-				current.images++			
-			}
-			current.album++
-			current.images = 0
-		}
-
-	}
-
-
-
-$(document).on('click','#loadMore',function(e){
-	e.preventDefault();
-	loadmore();
-});
-
-
-
-
-	function filterappend(){
-		console.log("inside filterappend")
-		for(var i=0;i<globaldata.length;i++){
-			$("#albumfilter").append('<li data-filter=".'+ globaldata[i].name +'"><a href="#">'+globaldata[i].name+'</a></li>');
-		}
-	}
-
-	
-	</script>
 </html>

@@ -5,18 +5,25 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="img/favicon.png" type="image/png">
-        <title>Gallery</title>
+        <title>Highlight Studio</title>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="vendors/linericon/style.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
         <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
         <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
         <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
         <link rel="stylesheet" href="vendors/animate-css/animate.css">
         <!-- main css -->
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/responsive.css">
+		<link rel="stylesheet" href="css/responsive.css">
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="js/myjs.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		  
+		
     </head>
     <body>
         
@@ -34,8 +41,8 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li> 
-                            <li class="nav-item active"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> 
+                            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
                             <li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li>
                             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                         </ul>
@@ -46,16 +53,14 @@
         <!--================Header Menu Area =================-->
         
         <!--================Home Banner Area =================-->
-        <section class="banner_area">
+        <section class="home_banner_area">
             <div class="banner_inner d-flex align-items-center">
             	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
 				<div class="container">
 					<div class="banner_content text-center">
-						<h2>Gallery</h2>
-						<div class="page_link">
-							<a href="index.html">Home</a>
-							<a href="gallery.html">Gallery</a>
-						</div>
+						<h2>Highlight Studio</h2>
+						<p>Every wedding we photograph is unique and has its own take on a timeless tradition, nothing can prepare you for the many emotions and beautiful moments you will experience on your wedding day.</p>
+						<a href="#" class="btn theme_btn">Explore Gallery</a>
 					</div>
 				</div>
             </div>
@@ -66,123 +71,85 @@
         <section class="home_gallery_area p_120">
         	<div class="container">
         		<div class="isotope_fillter">
-        			<ul class="gallery_filter list">
-						<li class="active" data-filter="*"><a href="#">All</a></li>
-						<li data-filter=".ap"><a href="#">Wedding</a></li>
-						<li data-filter=".unp"><a href="#">Couple</a></li>
-						<li data-filter=".unv"><a href="#">Events</a></li>
+        			<ul class="gallery_filter list" id="albumfilter">
+					<!--	<li class="active btn" data-filter="*"><a href="#">All</a></li>
+						<li class="btn" data-filter=".ap"><a href="#">Wedding</a></li>
+						<li class="btn" data-filter=".unp"><a href="#">Couple</a></li>
+						<li class="btn" data-filter=".unv"><a href="#">Events</a></li>-->
 					</ul>
         		</div>
         	</div>
-        	<div class="container box_1620">
-        		<div class="gallery_f_inner row imageGallery1">
-        			<div class="col-lg-3 col-md-4 col-sm-6 ap">
-        				<div class="h_gallery_item">
-        					<img src="img/gallery/gallery-1.jpg" alt="">
-        					<div class="hover">
-        						<a class="light" href="img/gallery/gallery-1.jpg"><i class="fa fa-expand"></i></a>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-3 col-md-4 col-sm-6 unv">
-        				<div class="h_gallery_item">
-        					<img src="img/gallery/gallery-2.jpg" alt="">
-        					<div class="hover">
-        						<a class="light" href="img/gallery/gallery-2.jpg"><i class="fa fa-expand"></i></a>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-3 col-md-4 col-sm-6 unp ap">
-        				<div class="h_gallery_item">
-        					<img src="img/gallery/gallery-3.jpg" alt="">
-        					<div class="hover">
-        						<a class="light" href="img/gallery/gallery-3.jpg"><i class="fa fa-expand"></i></a>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-3 col-md-4 col-sm-6 unp">
-        				<div class="h_gallery_item">
-        					<img src="img/gallery/gallery-4.jpg" alt="">
-        					<div class="hover">
-        						<a class="light" href="img/gallery/gallery-4.jpg"><i class="fa fa-expand"></i></a>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-3 col-md-4 col-sm-6 unv">
-        				<div class="h_gallery_item">
-        					<img src="img/gallery/gallery-5.jpg" alt="">
-        					<div class="hover">
-        						<a class="light" href="img/gallery/gallery-5.jpg"><i class="fa fa-expand"></i></a>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-3 col-md-4 col-sm-6 ap">
-        				<div class="h_gallery_item">
-        					<img src="img/gallery/gallery-6.jpg" alt="">
-        					<div class="hover">
-        						<a class="light" href="img/gallery/gallery-6.jpg"><i class="fa fa-expand"></i></a>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-3 col-md-4 col-sm-6 unp">
-        				<div class="h_gallery_item">
-        					<img src="img/gallery/gallery-7.jpg" alt="">
-        					<div class="hover">
-        						<a class="light" href="img/gallery/gallery-7.jpg"><i class="fa fa-expand"></i></a>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-3 col-md-4 col-sm-6 unp">
-        				<div class="h_gallery_item">
-        					<img src="img/gallery/gallery-8.jpg" alt="">
-        					<div class="hover">
-        						<a class="light" href="img/gallery/gallery-8.jpg"><i class="fa fa-expand"></i></a>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-3 col-md-4 col-sm-6 unv">
-        				<div class="h_gallery_item">
-        					<img src="img/gallery/gallery-9.jpg" alt="">
-        					<div class="hover">
-        						<a class="light" href="img/gallery/gallery-9.jpg"><i class="fa fa-expand"></i></a>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-3 col-md-4 col-sm-6 unp">
-        				<div class="h_gallery_item">
-        					<img src="img/gallery/gallery-10.jpg" alt="">
-        					<div class="hover">
-        						<a class="light" href="img/gallery/gallery-10.jpg"><i class="fa fa-expand"></i></a>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-3 col-md-4 col-sm-6 ap">
-        				<div class="h_gallery_item">
-        					<img src="img/gallery/gallery-11.jpg" alt="">
-        					<div class="hover">
-        						<a class="light" href="img/gallery/gallery-11.jpg"><i class="fa fa-expand"></i></a>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-3 col-md-4 col-sm-6 unv">
-        				<div class="h_gallery_item">
-        					<img src="img/gallery/gallery-12.jpg" alt="">
-        					<div class="hover">
-        						<a class="light" href="img/gallery/gallery-12.jpg"><i class="fa fa-expand"></i></a>
-        					</div>
-        				</div>
-        			</div>
+        	<div class="container box_1620" id="nestedclass">
+        		<div class="gallery_f_inner row imageGallery1" id="myclass2">`
+        	
+        			
+					
         		</div>
         		<div class="button_more">
-        			<a class="btn theme_btn" href="#">Load More Images</a>
+					<button id="loadMore" href="">Load More</button>
+				</div>
+        	</div>
+        </section>
+        <!--================End Home Gallery Area =================-->
+        
+        
+        <!--================Service Area =================-->
+        <section class="service_area p_120">
+        	<div class="container">
+        		<div class="main_title">
+        			<h2>What we offer</h2>
+        			<p>Who are in extremely love with eco friendly system.</p>
+        		</div>
+        		<div class="row service_inner">
+						<div class="col-lg-4 col-md-6">
+								<div class="service_item">
+									<i class="lnr lnr-camera"></i>
+									<h4>Photography</h4>
+									<p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-6">
+								<div class="service_item">
+									<i class="lnr lnr-picture"></i>
+									<h4>Image Maipulation</h4>
+									<p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-6">
+								<div class="service_item">
+									<i class="lnr lnr-camera-video"></i>
+									<h4>Videography</h4>
+									<p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-6">
+								<div class="service_item">
+									<i class="lnr lnr-film-play"></i>
+									<h4>Cinematography</h4>
+									<p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-6">
+								<div class="service_item">
+									<i class="lnr lnr-eye"></i>
+									<h4>Pro Photoshoot</h4>
+									<p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-6">
+								<div class="service_item">
+									<i class="lnr lnr-bullhorn"></i>
+									<h4>Digital Media</h4>
+									<p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+								</div>
+        			</div>
         		</div>
         	</div>
         </section>
-		<!--================End Home Gallery Area =================-->
-		
-
+		<!--================End Service Area =================-->
+        
         <!--================Instagram Area =================-->
-        <section class="instagram_area top_pad">
+        <section class="instagram_area">
         	<div class="container box_1620">
         		<div class="insta_btn">
         			<a class="btn theme_btn" href="#">Follow us on instagram</a>
@@ -266,6 +233,120 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
         <script src="js/jquery.ajaxchimp.min.js"></script>
         <script src="js/mail-script.js"></script>
-        <script src="js/theme.js"></script>
-    </body>
+		<script src="js/theme.js"></script>
+		<script src="js/myjs.js"></script>
+	</body>
+
+	<script>
+
+
+
+var globaldata;
+var current = {
+	album: 0,
+	images: 0
+}
+const noI = 2;
+$(document).ready(getresultffs());
+
+function getresultffs(alb){
+		console.log(alb)
+		$.ajax({
+			url: "http://35.244.47.26/highlight/api/Albums",
+			type: 'get',
+			success: function(data) {
+				console.log("onload");
+				console.log(data);
+				globaldata=data;
+				loadmore();
+				filterappend();
+				}
+		});
+	}
+
+
+
+	function loadmore(){
+		var count = 0
+		console.log("loadmore called")
+		for(i=current.album;i<globaldata.length;i++){
+			console.log(current.images, globaldata[i].images.length)
+			for (n = current.images;n<globaldata[i].images.length;n++) {
+				if (count == noI) {
+					return
+				}
+				console.log("Inside nested for loop");
+				var albumName = globaldata[i].name
+				var albumImage  = globaldata[i].images[n]
+				console.log("appending");
+                		var imgprint=document.createElement('img');
+						imgprint.src = '../highlight/img/image-api/'+albumImage;
+						/*document.getElementById("loadimage").appendChild(imgprint);*/
+						/* new append */
+						var gallery=document.getElementById("myclass2");
+						var containclass=document.createElement("div");
+						containclass.setAttribute("class","col-lg-3 col-md-4 col-sm-6 "+ albumName);
+						containclass.setAttribute('class',albumName);
+						var imgcont=document.createElement("div");
+						imgcont.setAttribute("class","h_gallery_item");
+						imgcont.append(imgprint);
+						containclass.append(imgcont);
+						
+						gallery.setAttribute('class','gallery_f_inner row imageGallery1');
+						$("#myclass2").append('<div class="col-lg-3 col-md-4 col-sm-6 '+albumName+'">'+
+										'<div class="h_gallery_item"><img src="'+imgprint.src+'" alt="">'+
+										'<div class="hover"><a class="light" href="'+imgprint.src+'">'+
+											'<i class="fa fa-expand"></i></a></div></div>');
+						gallery.style.height= "auto";
+				count++	
+				current.images++			
+			}
+			current.album++
+			current.images = 0
+		}
+
+	}
+
+
+
+$(document).on('click','#loadMore',function(e){
+	e.preventDefault();
+	loadmore();
+});
+
+
+
+
+	function filterappend(){
+		console.log("inside filterappend")
+		for(var i=0;i<globaldata.length;i++){
+			$("#albumfilter").append('<li><a onclick=filterimages("'+globaldata[i].name+'")>'+globaldata[i].name+'</a></li>');
+		}
+	}
+
+
+function filterimages(albname){
+	if(albname!=undefined || albname!=null){
+			console.log("inside if statement");
+			url='http://35.244.47.26/highlight/api/Albums?filter[where][name]='+albname;
+			globaldata=[];
+			current={
+				album:0,
+				images:0};
+		}
+		$.ajax({
+			url: url,
+			type: 'get',
+			success: function(data) {
+				console.log("onload");
+				console.log(data);
+				globaldata=data;
+				document.getElementById("myclass2").innerHTML="";
+				loadmore();
+				}
+		});
+	
+}
+
+	</script>
 </html>
