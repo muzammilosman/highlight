@@ -278,7 +278,7 @@ $(document).ready(
 				var albumImage  = globaldata[i].images[n]
 				console.log("appending");
                 		var imgprint=document.createElement('img');
-						imgprint.src = '../img/image-api/'+albumImage;
+						imgprint.src = '/img/image-api/'+albumImage;
 						/*document.getElementById("loadimage").appendChild(imgprint);*/
 						/* new append */
 						var gallery=document.getElementById("myclass2");
@@ -316,7 +316,7 @@ $(document).on('click','#loadMore',function(e){
 	function filterappend(){
 		console.log("inside filterappend")
 		for(var i=0;i<globaldata.length;i++){
-			$("#albumfilter").append('<li data-filter=".'+globaldata[i].name+'"><a href="#">'+globaldata[i].name+'</a></li>');
+			$("#albumfilter").append('<li data-filter=".'+ globaldata[i].name +'"><a href="#">'+globaldata[i].name+'</a></li>');
 		}
 	}
 
