@@ -24,6 +24,10 @@
     <div id="loadimage">
     </div>
     </div>
+
+    <div class="container">
+
+    </div>
 </body> 
     <script>
     $(document).ready(
@@ -40,7 +44,7 @@
         fd.append('file',files);
         }
         $.ajax({
-            url: 'http://35.244.47.26/highlight/api/Albums/'+document.getElementById('albumid').value+'/uploadImage',
+            url: 'https://highlightstudio.in/api/Albums/'+document.getElementById('albumid').value+'/uploadImage',
             type: 'post',
             data: fd,
             contentType: false,
@@ -63,7 +67,7 @@ $(document).ready(function(){
 $("#ldmre").click(function(){
 console.log("show result function")
 $.ajax({
-url: "http://35.244.47.26/highlight/api/Albums",
+url: "https://highlightstudio.in/api/Albums",
 type: 'get',
 success: function(data) {
     console.log("onload");

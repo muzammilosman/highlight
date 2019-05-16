@@ -192,7 +192,7 @@ $(document).ready(getresultffs());
 function getresultffs(alb){
 		console.log(alb)
 		$.ajax({
-			url: "http://35.244.47.26/highlight/api/Albums",
+			url: "https://highlightstudio.in/api/Albums",
 			type: 'get',
 			success: function(data) {
 				console.log("onload");
@@ -269,7 +269,7 @@ function filterimages(albname){
 	console.log("inside filterimages");
 	if(albname!=undefined || albname!=null){
 			console.log("inside if statement");
-			url='http://35.244.47.26/highlight/api/Albums?filter[where][name]='+albname;
+			url='https://highlightstudio.in/api/Albums?filter[where][name]='+albname;
 			globaldata=[];
 			current={
 				album:0,

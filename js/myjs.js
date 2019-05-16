@@ -17,7 +17,7 @@ var albumid="abc";
 function createAlbum(){
     console.log("entry");
     const xhr= new XMLHttpRequest();
-    xhr.open("POST","http://35.244.47.26/highlight/api/Albums/createAlbum",true);
+    xhr.open("POST","https://highlightstudio.in/api/Albums/createAlbum",true);
     xhr.setRequestHeader("Content-type","application/json");
     xhr.withCredentials="true";
     xhr.onload=function(){
@@ -42,7 +42,7 @@ function createAlbum(){
 function existingAlbum(){
     console.log("existingalbum");
     $.ajax({
-        url:"http://35.244.47.26/highlight/api/Albums",
+        url:"https://highlightstudio.in/api/Albums",
         type:'get',
         success: function(data){
             var found1=false;
@@ -75,7 +75,7 @@ function uploadImage2(){
     console.log("formdata created");
     imgData.append("images",files1);
     var xhr= new XMLHttpRequest();
-    var url1="http://35.244.47.26/highlight/api/Albums/5c305958954c7b3d52be9795/uploadImage";
+    var url1="https://highlightstudio.in/api/Albums/5c305958954c7b3d52be9795/uploadImage";
     xhr.open('POST',url1,true);
     console.log("open xhr");
     xhr.setRequestHeader("Content-type","application/json");
